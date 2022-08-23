@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+}
+
+main > *,
+header {
+    padding: 0 125px;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+header {
+    background-color: #000;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    min-height: 54px;
+    font-family: Helvetica,Arial,sans-serif; /* how is this used ??? */
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+
+}
+
+.link {
+    color: white;
+}
+
+.nav-align {
+    display: flex;
+    gap: 15px;
+}
+
+.download {
+    background-color: rgb(25, 230, 140);
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.laptop-img {
+    position: relative;
+    width: 136px;
+    margin-bottom: 35px;
+}
+
+.dl_title-style {
+    font-family: Helvetica, Arial, sans-serif;
+    padding-bottom: 32px;
+    margin: 0 0;
+    font-size: 41px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 40px;
+}
+
+.dl_text-style {
+    font-family: Helvetica, Arial, sans-serif;
+    padding: 0px 0px 1em;
+    margin: 16px 0 24 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.button_rm-style {
+    background: none;
+    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;   
+}
+
+.button {
+    background-color: #fff;
+    color: #000;
+    border-radius: 500px;
+    padding: 14px 32px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.mobile {
+    background-color: white;
+    padding: 70px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-arrange {
+    margin: 10px;
+}
+
+.logo-style {
+    height: 40px;
+}
+
+.logo-style2 {
+    height: 57px;
+    margin: -8px;
+}
+
+.mobile-title {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    padding-bottom: 0.75em;
+    font-weight: 900;
+}
+
+.mobile-text {
+    font-family: Helvetica, Arial, sans-serif;
+    padding-bottom: 1em;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+
+}
+
+.absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.allplatforms {
+    background-color: rgb(34, 35, 38);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.platf-img {
+    max-width: 560px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 20px;
+
+}
+
+.platf-text {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.5px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    color:#fff;
+    padding-bottom: 40px;
+}
+
+.platf-links {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-transform: uppercase;
+    gap: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Helvetica, Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.platf-links-deco {
+    text-decoration: underline;
+    color:rgb(29, 185, 84)
+}
+
+.platf-links-deco:hover {
+    color: rgb(121, 213, 153)
+}
+
+.platf-toplinks-deco {
+    color: white;
+}
+
+.platf-toplinks-deco:hover {
+    color: #1ed760;
+}
+
+.dot-style {
+    color: rgb(29, 185, 84);
+    font-size: 22px; 
+}
+
+footer {
+    background-color: #000;
+    color: #919496;
+    padding: 80px 125px 50px;
+}
+
+.container-toplinks {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.toplinks {
+    display: flex;
+}
