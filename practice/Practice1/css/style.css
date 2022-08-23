@@ -35,7 +35,7 @@ header {
     display: flex;
     align-items: center; 
     justify-content: space-between;
-
+    height: 80px;
 }
 
 .link {
@@ -44,7 +44,7 @@ header {
 
 .nav-align {
     display: flex;
-    gap: 15px;
+    gap: 35px;
 }
 
 .download {
@@ -60,6 +60,15 @@ header {
     position: relative;
     width: 136px;
     margin-bottom: 35px;
+}
+
+.navlinks-deco {
+    color: white;
+    font-weight: 700;
+}
+
+.navlinks-deco:hover {
+    color: #1ed760;
 }
 
 .dl_title-style {
@@ -175,7 +184,7 @@ header {
 }
 
 .platf-links {
-    color: white;
+    /* color: white; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -218,13 +227,34 @@ footer {
 
 .container-toplinks {
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
     align-items: flex-start;
     gap: 20px;
+    font-family: Helvetica,Arial,sans-serif;
+}
+
+.title-toplinks {
+    color: #919496;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1.4;
+    letter-spacing: .08em;
+    text-transform: uppercase;
 }
 
 .toplinks {
     display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.toplink-margin {
+    margin: 20px 0;
+}
+
+.toplink-space {
+    margin: 0 20px;
 }
 
 .img-container {
@@ -252,5 +282,26 @@ footer {
 
 .img-style:hover {
     background-color: rgb(29, 185, 84);
+
+}
+
+.flex {
+    display: flex;
+}
+
+.country {
+    display: flex;
+    justify-content:right;
+}
+
+.bottomlinks {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.bottomlinks-list {
+    display: flex;
+    gap: 0 20px;
 
 }
