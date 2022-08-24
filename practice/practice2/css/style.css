@@ -1,0 +1,101 @@
+/* === General styles === */
+
+/* temp */
+.border {
+    border: yellow solid;
+}
+/* temp */
+
+body {
+    margin: 0;
+    background-color:#000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.a {
+    text-decoration: none;
+}
+
+.a:hover {
+    color: #1ed760;
+}
+
+.a_wh {
+    color: white;
+}
+
+.a_gr {
+    color: #d9dadc;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.flex_spacebetween {
+    justify-content: space-between;
+}
+
+.align_center {
+    align-items: center;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+/* === Header styles === */
+
+header {
+    background-color: transparent;
+}
+
+.header_text {
+    
+    color:white;
+    font-size: 16px;
+    font-weight: 700;
+    height: 80px;
+}
+
+.nav-maxwidth {
+    max-width: 1170px;
+    width: 100%
+}
+
+/* === Main styles === */
+
+main {
+    background-color: #121212;
+}
+
+.pagecontainer {
+    background-color: transparent;
+}
+
+.quicklinks {
+    background-color: hsla(0,0%,100%,.07);
+}
+
+.community {
+    background-color: transparent;
+    min-height: 600px;
+}
