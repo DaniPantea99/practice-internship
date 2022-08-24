@@ -99,6 +99,7 @@ header {
 }
 
 .button {
+    /* position: relative; */
     background-color: #fff;
     color: #000;
     border-radius: 500px;
@@ -106,6 +107,16 @@ header {
     font-size: 14px;
     line-height: 20px;
     font-weight: 700;
+}
+
+.button:hover{
+    transform: scale(1.04);
+}
+
+.button:active {
+    outline: 3px solid white ;
+    border-radius: 500px;
+    outline-offset: 3px;
 }
 
 .mobile {
@@ -184,7 +195,7 @@ header {
 }
 
 .platf-links {
-    /* color: white; */
+    color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -292,16 +303,28 @@ footer {
 .country {
     display: flex;
     justify-content:right;
+    font-size: 12px;
 }
 
 .bottomlinks {
     display: flex;
     justify-content: space-between;
     margin: 20px 0;
+    font-size: 12px;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .bottomlinks-list {
     display: flex;
     gap: 0 20px;
 
+}
+
+.bottomlinks-deco {
+    color: #919496;
+    
+}
+
+.bottomlinks-deco:hover {
+    color: #1ed760;
 }
