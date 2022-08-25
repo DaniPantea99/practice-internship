@@ -29,7 +29,7 @@ body {
 }
 
 .a_gr {
-    color: #d9dadc;
+    color: #919496;
 }
 
 .help-links {
@@ -100,7 +100,7 @@ ul {
 /* === Header styles === */
 
 header {
-    background-color: transparent;
+    background-color: #121212;
 }
 
 .header_text {
@@ -229,9 +229,9 @@ main {
     font-weight: 900;
     line-height: 1.5;
     margin: 0 0 40px;
+    letter-spacing: -3px;
+    word-spacing: -11px;
 }
-
-
 
 .login__style {
     padding: 20px 0;
@@ -253,4 +253,80 @@ main {
 
 .community {
     background-color: transparent;
+}
+
+.community__title {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 0;
+    padding: 20px 0;
+    line-height: 1.5;
+}
+
+.btn__community {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1ed760;
+    border-radius: 5rem;
+    width: 185px;
+    height: 45px;
+}
+
+.btn__community:hover {
+    transform: scale(1.04);
+}
+
+.btn__textstyle {
+    color: black;
+    font-weight: 600;
+
+}
+
+/* === Footer === */
+
+footer {
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.footer__textstyle {
+    color: #919496;
+}
+
+.footer__bottomtextstyle {
+    font-size: 12px;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    background-color: #222326;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.img-style {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    
+}
+.img-style:hover {
+    background-color: rgb(29, 185, 84);
+
+}
+
+.toplinks__layout {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 70px;
+}
+
+.toplinks_titlestyle {
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
 }
