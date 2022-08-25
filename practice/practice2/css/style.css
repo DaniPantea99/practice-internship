@@ -5,12 +5,16 @@
     border: yellow solid;
 }
 /* temp */
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
     background-color:#000;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
+    
 }
 .a {
     text-decoration: none;
@@ -26,6 +30,15 @@ body {
 
 .a_gr {
     color: #d9dadc;
+}
+
+.help-links {
+    text-decoration: none;
+    color: white;
+}
+
+.help-links:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -46,6 +59,13 @@ ul {
     align-items: center;
 }
 
+.align_left {
+    align-items: left;
+}
+
+.flex-direction-col {
+    flex-direction: column;
+}
 .margin-auto {
     margin: 0 auto;
 }
@@ -62,6 +82,21 @@ ul {
     gap: 30px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding-top: 16px;
+    margin-bottom: 56px;
+}
+
+
+.page-maxwidth {
+    max-width: 1170px;
+    width: 100%;
+    
+}
+
 /* === Header styles === */
 
 header {
@@ -76,26 +111,146 @@ header {
     height: 80px;
 }
 
-.nav-maxwidth {
-    max-width: 1170px;
-    width: 100%
-}
 
 /* === Main styles === */
 
 main {
+    
     background-color: #121212;
 }
 
+.main-maxwidth {
+    max-width: 628px;
+    width: 100%;
+    padding: 32px 16px;
+}
+
+/* Page Container */
+
 .pagecontainer {
     background-color: transparent;
+    
 }
+
+.form-style {
+    padding: 12px 0;
+    background-color: white;
+    border-radius: 4px;
+    margin: 12px 0;
+}
+
+.search-input {
+    width: 100%; 
+    appearance: none; 
+    border: none; 
+    padding-left: 10px;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.card {
+    width: 188px;
+    height: 92px;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 12px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.card__img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(30%, -30%) rotate(25deg);
+
+}
+
+.card__text {
+    display: block;
+    max-width: 13ch;
+}
+
+.card--purple {
+    background-color: rgb(175, 40, 150);
+}
+
+.card--red {
+    background-color: rgb(140, 25, 50);
+}
+
+.card--orange {
+    background-color: rgb(176, 98, 57);
+}
+
+.card--green {
+    background-color: rgb(0, 100, 80);
+}
+
+.card--grey {
+    background-color: rgb(117, 117, 117);
+}
+
+.card--blue {
+    background-color: rgb(83, 122, 161);
+}
+
+/* Quick Links */
 
 .quicklinks {
     background-color: hsla(0,0%,100%,.07);
+    
 }
+
+.quicklinks__style {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-block: 0;
+    padding-bottom: 32px;
+}
+
+.help-links-padding {
+    padding: 20px 0;
+}
+
+.support__title {
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #a7a7a7;
+    margin: 0 0 20px 0;
+}
+
+.support__subtitle {
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.5;
+    margin: 0 0 40px;
+}
+
+
+
+.login__style {
+    padding: 20px 0;
+}
+
+.login__textstyle {
+    font-size: 20px;
+    font-weight: 700;
+    color: #a7a7a7;
+    line-height: 1.5;
+}
+
+.login__a-style {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Community */
 
 .community {
     background-color: transparent;
-    min-height: 600px;
 }
