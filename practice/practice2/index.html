@@ -11,7 +11,7 @@
     
     <header class="header_text flex">
         <!-- Banner -->
-        <div class="flex flex_spacebetween align_center margin-auto nav-maxwidth">
+        <div class="flex flex_spacebetween align_center margin-auto page-maxwidth">
             <!-- Logo -->
             
                 <a href="https://www.spotify.com/ro-ro/?_ga=2.230266398.365964766.1661143807-1764607408.1660902705"><img src="img/logo.svg" alt="logo"></a>
@@ -34,69 +34,147 @@
     </header>
 
     <main>
+    <!-- Page Container -->
+    <section class="pagecontainer main-maxwidth margin-auto"> 
 
-    <section class="pagecontainer"> <!-- Page Container -->
+        <h1 class="support__title">Spotify support</h1>
 
-        Spotify support
+        <h2 class="support__subtitle">How can we help you?</h2>
 
-        How can we help you?
-
-        Log in for faster help
+        <div class="login__style">
+            <span class="login__textstyle"><a class="login__a-style" href="https://accounts.spotify.com/login/?continue=https%3A%2F%2Fsupport.spotify.com%2Fro-ro%2F&_ga=2.59421999.365964766.1661143807-1764607408.1660902705">Log in</a> for faster help</span>
+        </div>
+        
+        
 
         <!-- Search form -->
+
+        <div class="flex form-style">
+            <div>
+                <svg class="flex" style="height: 24px; width: 24px; fill: #5e5e5e;">
+                    <path d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"></path>
+                </svg>
+            </div>
+            <input class="search-input search-input:focus" type="text" placeholder="Search" >
+        </div>
+            
 
         <!-- / search form -->
 
         <!-- Category Cards -->
-
-        Payment Help
-
-        Plan Help
-
-        App Help
-
-        Device help
-
-        Safety & Privacy
-
-        Account Help
+        <div class="grid">
+            <div class="card card--purple">
+                <span class="card__text">Payment Help</span>
+                <img class="card__img" src="img/payment.webp" alt="payment help section">
+            </div>
+            
+            <div class="card card--red">
+                <span class="card__text">Plan Help</span>
+                <img class="card__img" src="img/plan.webp" alt="plan help section">
+            </div>
+            
+            <div class="card card--orange">
+                <span class="card__text">App Help</span>
+                <img class="card__img" src="img/app.webp" alt="app help section">
+            </div>
+            
+            <div class="card card--green">
+                <span class="card__text">Device help</span>
+                <img class="card__img" src="img/device.webp" alt="app help section">
+            </div>
+            
+            <div class="card card--grey">
+                <span class="card__text">Safety & Privacy</span>
+                <img class="card__img" src="img/safety.webp" alt="app help section">
+            </div>
+            
+            <div class="card card--blue">
+                <span class="card__text">Account Help</span>
+                <img class="card__img" src="img/account.webp" alt="app help section">
+            </div>
+            
+        </div>
+        
+        
 
 
         <!-- / category cards -->
 
-    </section> <!-- / page container -->
+    </section> 
+    <!-- / page container -->
+    <!-- Quick Links -->
+    <section class="quicklinks"> 
+        <div class="main-maxwidth margin-auto flex flex-direction-col align_left">
+            
+            <p class="quicklinks__style">Quick help</p>
 
-    <section class="quicklinks"> <!-- Quick Links -->
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/reset-password/">
+                <span>Can't reset password</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+    
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/account-doesnt-look-right/">
+                <span>My account doesn't look right</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+    
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/cannot-remember-login/">
+                <span>Can't remember login details</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+    
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/facebook-login-help/">
+                <span>Facebook login help</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+    
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/payment-methods/">
+                <span>Payment methods</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+    
+            <a class="help-links flex flex_spacebetween help-links-padding" href="https://support.spotify.com/ro-ro/article/start-or-join-family-plan/">
+                <span>Start or join Family plan</span>
+                <svg  class="flex" style="height: 24px; width: 24px; fill: #a7a7a7;">
+                    <path d="M8.043 2.793a1 1 0 000 1.414L15.836 12l-7.793 7.793a1 1 0 101.414 1.414L18.664 12 9.457 2.793a1 1 0 00-1.414 0z">
+                    </path>
+                </svg>
+            </a>
+        
+        </div>
+        
 
-        Quick help
+    </section> 
+    <!-- / quick links -->
+    <!-- Community -->
+    <section class="community main-maxwidth margin-auto"> 
 
-        Can't reset password
+        <div class="flex align_center flex-direction-col">
+            <p>Visit our Community</p>
+            <p>Have questions? Find answers from our worldwide Community of expert fans!</p>
+            <button>Go to community</button>
+        </div>
 
-        My account doesn't look right
-
-        Can't remember login details
-
-        Facebook login help
-
-        Payment methods
-
-        Start or join Family plan
-
-    </section> <!-- / quick links -->
-
-    <section class="community border"> <!-- Community -->
-
-        Visit our Community
-
-        Have questions? Find answers from our worldwide Community of expert fans!
-
-        <button>Go to community</button>
-
-    </section> <!-- / community -->
-
+    </section> 
+    <!-- / community -->
     </main>
 
-    <footer>
+    <footer class="page-maxwidth align_center margin-auto">
         <div> <!-- Logo Footer -->
             <a href="https://www.spotify.com/ro-ro/?_ga=2.34730275.365964766.1661143807-1764607408.1660902705"><img src="img/logo.svg" alt="logo"></a>
         </div> <!-- / logo footer -->
@@ -142,7 +220,7 @@
                 <li><a class="a a:hover a_gr" href="">Centru de confidențialitate</a></li>
                 <li><a class="a a:hover a_gr" href="">Politică de confidențialitate</a></li>
                 <li><a class="a a:hover a_gr" href="">Setari pentru cookie-uri</a></li>
-                <li><a class="a a:hover a_gr" href="">About ads (Informații despre reclame</a></li>
+                <li><a class="a a:hover a_gr" href="">About ads (Informații despre reclame)</a></li>
             </ul>
             <span>© 2022 Spotify AB</span>
         </div> <!-- / bottom links -->
