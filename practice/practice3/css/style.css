@@ -131,3 +131,71 @@ header {
     line-height: 1.5;
 }
 
+.premium {
+    display: flex;  
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.premium ul {
+    display: flex;
+}
+
+.premium__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1170px;
+    width: 100%;
+    padding: 75px 15px;
+    justify-content: center;
+}
+
+.premium__content h2 {
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 50px;
+    letter-spacing: -2px;
+}
+
+.premium__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 270px;;
+}
+
+.premium__cards h3, p {
+    align-items: center;
+    padding: 10px 0;
+}
+
+.premium__cards img {
+    width: 142px;
+    height: 142px;
+    margin: 0 auto 40px;
+}
+
+.abonamente {
+    display: flex;
+    justify-content: center;
+    background-color: #efefef;
+    color: #000000;
+}
+
+.abonamente__content {
+    border: 3px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1170px;
+    width: 100%;
+    padding: 75px 15px;
+}
+
+.abonamente__content h2 {
+    font-size: 40px;
+    letter-spacing: -1.6px; 
+    font-weight: bold;
+}
