@@ -209,6 +209,13 @@ header {
     grid-template-rows: repeat(4, auto);
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    margin-top: 70px;
+}
+
+.abonamente__cards p, .abonamente__cards h2 {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
 }
 
 .card {
@@ -217,11 +224,27 @@ header {
     border-radius: 10px;;
     width: 270px;
     padding: 20px;
-    box-shadow: 3px 3px 5px black;
+    box-shadow: rgb(0 0 0 / 30%) 0px 0px 8px;
+}
+
+.card__liststyle {
+    padding-top: 20px;
+    max-height: 250px;
+    height: 100%;
 }
 
 .card__list {
     display: flex;
+    margin-bottom: 5px;
+}
+
+.card__svg {
+    margin-right: 10px;
+}
+
+.card__list p {
+    padding: 0;
+    line-height: 22px;
 }
 
 .card__button {
@@ -241,6 +264,7 @@ header {
 .card__footer {
     color: rgb(83, 83, 83);
     font-size: 12px;
+    margin-top: 10px;
 }
 
 .card__footer a {
@@ -257,11 +281,12 @@ header {
 }
 
 .hr {
+    margin-top: 20px;
     border: 1px inset rgb(204, 204, 204);
 }
 
 .card h2 {
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 
@@ -313,6 +338,7 @@ footer {
 .listitem__style {
     padding-bottom: 20px;
 }
+
 .a {
     text-decoration: none;
 }
