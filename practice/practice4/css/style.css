@@ -6,7 +6,7 @@
     cursor: default;
 }
 
-/* === Header === */
+/* =============== Header ============= */
 
 header {
     display: flex;
@@ -18,17 +18,21 @@ header {
 
 
 
-/* === Main === */
+/* ============= Main =================== */
 
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    margin-top: 30px;
+    padding: 10px;
 }
 
-
+.content {
+    width: 100%;
+    max-width: 450px;
+}
 
 /* Social Log in */
 
@@ -37,16 +41,19 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    row-gap: 10px;
+    font-weight: 600;
+    font-size: 14px;
 }
 
-.social__button {
+.social__button, .signup__button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: black;
     border: 1px solid #878787;
     border-radius: 500px;
-    width: 450px;
+    width: 100%;
     height: 50px;
     color: #eceff5;
     text-decoration: none;
@@ -58,11 +65,11 @@ main {
     font-weight: 700;
 }
 
-.social__button:hover {
+.social__button:hover, .signup__button:hover {
     border: 1px solid #000;
 }
 
-.social__button:active {
+.social__button:active, .signup__button:active {
     outline: 3px solid #000;
     outline-offset: 3px;
     opacity: 50%;
@@ -79,6 +86,11 @@ main {
 #google {
     background-color: #ffffff;
     color: #818181;
+}
+
+#signup {
+    background-color: #fff;
+    color: #6a6a6a;
 }
 
 .googleimg__container {
@@ -103,13 +115,152 @@ main {
     align-items: center;    
     gap: 20px;
     text-transform: uppercase;
-    width: 450px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 10px 0;
 }
 
-.separator__left, .separator__right {
-    /* width: 100%;
-    border-top: 1px inset grey; */
+.line {
     margin: 12px 0px 20px;
     flex: 1 1 0%;
     border-top: 1px solid rgb(217, 218, 220);
 }
+
+/* Login form */
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.remember__login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.login__button {
+    background-color: #1ed760;
+    padding: 14px 32px;
+    border-radius: 500px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+}
+
+.login__button:hover {
+    transform: scale(1.04);
+    background-color: #1fdf64;
+}
+
+.login__button:active {
+    transform: scale(1);
+    outline: 3px solid black;
+    outline-offset: 3px;
+    background-color: #169c46;
+}
+
+.user__input {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+/*
+#email::after {
+    content: 'Please enter your Spotify username or email address.';
+    color: #d31225;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#password::after {
+    content: 'Please enter your password.';
+    color: #d31225;
+    font-size: 14px;
+    font-weight: 600;
+}
+*/
+.input__formstyle {
+    border: 0px;
+    border-radius: 4px;
+    padding: 14px;
+    box-shadow: inset 0 0 0 1px #878787;
+    font-size: 16px;
+}
+    /* appearance: none; */
+    /* background-image: none; */
+    /* display: block; */
+    /* font-weight: 400; */
+    /* width: 100%; */
+    /* margin-top: 0px; */
+    /* margin-bottom: 0px; */
+    
+    /* background-color: #fff; */
+    /* color: #000; */
+
+.forgot__style {
+    text-decoration: none;
+    color: #000;
+}
+
+.forgot__style:hover {
+    text-decoration: underline;
+    cursor: text;
+}
+
+.new__account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+    font-weight: bold;
+}
+
+/*
+.checkbox {
+    appearance: none;  
+}
+
+.checkbox::before{
+    box-sizing: border-box;
+    background-color: unset;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-color: var(--background-base,#ffffff);
+    display: block;
+    content: "";
+    height: 5px;
+    width: 9px;
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0px) rotate(-48deg);
+}
+
+.checkbox::after {
+    display: block;
+    position: absolute;
+    pointer-events: none;
+    transition: border-color 200ms ease-in 0s;
+    box-sizing: border-box;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+    top: -6px;
+    left: -6px;
+    background: transparent;
+    border-radius: 6px;
+    border: 3px solid transparent;
+    content: "";
+}
+*/
