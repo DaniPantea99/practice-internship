@@ -8,6 +8,7 @@
     <title>Practice 4</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <header>
         <svg width="182px" height="56px" role="img" viewBox="0 0 78 24" height="100%" class="Svg-sc-6c3c1v-0 jrsLlJ">
@@ -22,7 +23,8 @@
             <div class="social__login">
                 <p>To continue, log in to Spotify.</p>
 
-                <a class="social__button" id="facebook" href="">
+                <a class="button button--facebook"
+                    href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">
                     <svg fill="#eceff5" role="img" focusable="false" height="24" width="24" viewBox="0 0 24 24"
                         class="Svg-ytk21e-0 dMCjEC sc-bkkeKt gIBNai">
                         <path data-name="White"
@@ -32,19 +34,21 @@
                     <span>Continue with Facebook</span>
                 </a>
 
-                <a class="social__button" id="apple" href="">
+                <a class="button button--apple"
+                    href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">
                     <img src="img/apple-logo.svg" alt="apple logo">
                     <span>Continue with Apple</span>
                 </a>
 
-                <a class="social__button" id="google" href="">
+                <a class="button"
+                    href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">
                     <div class="googleimg__container"><img class="googleimg" src="img/google-logo.svg"
                             alt="google logo">
                     </div>
                     <span>Continue with Google</span>
                 </a>
             </div> <!-- /Social Login -->
-            
+
             <!-- Separator -->
             <div class="separator">
                 <div class="line"></div>
@@ -57,29 +61,56 @@
                 <form action="login" method="get">
                     <div class="user__input" id="email">
                         <label for="email">Email address or username</label>
-                        <input class="input__formstyle" type="text" name="email" id="email" placeholder="Email address or username">
+                        <input class="input__formstyle validation" type="text" name="email" id="email"
+                            placeholder="Email address or username" autocomplete="off" required>
+
+                        <div class="input__error">
+                            <svg role="img" height="16" width="16" aria-label="Error:"
+                                class="Svg-sc-1bi12j5-0 hDgDGI FormHelpText__IconExclamationAltActiveForText-sc-7bszd7-0 kaNWxt"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2.343 2.343a8 8 0 1111.314 11.314A8 8 0 012.343 2.343zm5.099 8.738a.773.773 0 00-.228.558.752.752 0 00.228.552.75.75 0 00.552.229.773.773 0 00.558-.229.743.743 0 00.234-.552.76.76 0 00-.234-.558.763.763 0 00-.558-.234.743.743 0 00-.552.234zm-.156-7.23l.312 6.072h.804l.3-6.072H7.286z">
+                                </path>
+                            </svg>
+                            <p>Please enter your Spotify username or email address.</p>
+                        </div>
                     </div>
-                    
+
+
+
                     <div class="user__input" id="password">
                         <label for="password">Password</label>
-                        <input class="input__formstyle" type="password" name="password" id="password" placeholder="Password">
+                        <input class="input__formstyle validation" type="password" name="password" id="password"
+                            placeholder="Password" required>
+                        <div class="input__error">
+                            <svg role="img" height="16" width="16" aria-label="Error:"
+                                class="Svg-sc-1bi12j5-0 hDgDGI FormHelpText__IconExclamationAltActiveForText-sc-7bszd7-0 kaNWxt"
+                                viewBox="0 0 16 16">
+                                <path
+                                    d="M2.343 2.343a8 8 0 1111.314 11.314A8 8 0 012.343 2.343zm5.099 8.738a.773.773 0 00-.228.558.752.752 0 00.228.552.75.75 0 00.552.229.773.773 0 00.558-.229.743.743 0 00.234-.552.76.76 0 00-.234-.558.763.763 0 00-.558-.234.743.743 0 00-.552.234zm-.156-7.23l.312 6.072h.804l.3-6.072H7.286z">
+                                </path>
+                            </svg>
+                            <p>Please enter your password.</p>
+                        </div>
                     </div>
-                    
+
                     <a class="forgot__style"
                         href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">Forgot
                         your password?</a>
 
-                    <div class="remember__login">
-                        <div>
-                            <input class="checkbox" type="checkbox" name="remember me" id="remember" checked>
-                            <label for="rememberme">Remember me</label>
-                        </div>
 
+                    <div class="login__wrapper">
+                        <label class="rememberme">Remember me
+                            <input type="checkbox" checked="checked">
+                            <div class="checkmark"></div>
+                        </label>
+    
                         <a class="login__button"
                             href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">
                             <span>Log in</span>
                         </a>
                     </div>
+
                 </form>
                 <div class="line"></div>
             </div>
@@ -87,10 +118,13 @@
             <!-- New Account -->
             <div class="new__account">
                 <p>Don't have an account?</p>
-                <a class="signup__button" id="signup" href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">Sign up for spotify</a>
+                <a class="button" id="signup"
+                    href="https://accounts.spotify.com/en/login/?continue=https%3A//open.spotify.com/__noul__%3Fl2l%3D1%26nd%3D1&_locale=ro-RO">Sign
+                    up for spotify</a>
             </div>
             <!-- /New Account -->
         </div> <!-- /.content -->
     </main>
 </body>
+
 </html>
