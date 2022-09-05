@@ -235,11 +235,12 @@ main {
 }
 
 .rememberme input {
-    position: absolute;
+    /* position: absolute;
     opacity: 0;
     cursor: default;
     height: 0;
-    width: 0;
+    width: 0; */
+    display: none;
 }
 
 .checkmark {
@@ -257,13 +258,17 @@ main {
     border-color: #329947;
 }
 
-.checkmark:focus {
+.rememberme:focus .checkmark {
     outline: 3px solid black;
     outline-offset: 2px;
 }
 
+.rememberme {
+    outline: none;
+}
+
 .checkmark:active {
-    border: 2px solid #329947;
+    /* border: 2px solid #329947; */
 }
 
 .rememberme input:checked ~ .checkmark {
