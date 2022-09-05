@@ -267,10 +267,6 @@ main {
     outline: none;
 }
 
-.checkmark:active {
-    /* border: 2px solid #329947; */
-}
-
 .rememberme input:checked ~ .checkmark {
     background-color: #329947;
     border: none;
