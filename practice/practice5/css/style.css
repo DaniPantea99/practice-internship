@@ -276,7 +276,7 @@ label {
     outline: none;
 }
 
-label:checked .custom__radiobutton {
+label input:checked ~ .custom__radiobutton {
     border: 4px solid #329947;
 }
 
