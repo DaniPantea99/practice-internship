@@ -118,6 +118,7 @@
 }
 
 .user__input {
+    /* position: relative; */
     padding-bottom: 24px;
 }
 
@@ -185,7 +186,11 @@
 
 .birthdate {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+}
+
+.birthdate label {
+    font-weight: 400;
 }
 
 .birthdate__info p {
@@ -195,4 +200,228 @@
     letter-spacing: normal;
     font-weight: 700;
     padding-bottom: 8px;
+}
+
+.user__input input[name="day"] {
+    width: 90px;
+}
+
+.user__input input[name="year"] {
+    width: 115px;
+}
+
+.user__input select[name="month"] {
+    width: 200px;
+    color: #6a6a6a;
+    appearance: none;
+    background-color: transparent;
+}
+
+.month__dropdown {
+    display: flex;
+    position: relative;
+}
+
+.month__arrow {
+    position: absolute;
+    top: 30%;
+    right: 7%;
+    z-index: -1;
+}
+
+.gender {
+    padding-bottom: 24px;
+}
+
+.gender p{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+.gender label {
+    display: inline-block;
+    padding: 8px 24px 0 0;
+}
+.gender input {
+    display: none;
+}
+
+.custom__radiobutton {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+label:hover .custom__radiobutton {
+    border-color: #359b4a;
+}
+
+label:active .custom__radiobutton {
+    border: 2px solid #329947;
+}
+
+label:focus .custom__radiobutton {
+    outline: 3px solid black;
+    outline-offset: 3px;
+}
+
+label {
+    outline: none;
+}
+
+label:checked .custom__radiobutton {
+    border: 4px solid #329947;
+}
+
+.news {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: default;
+    font-size: 14px;
+}
+
+.news input {
+    display: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #878787;
+}
+
+.news:hover .checkmark {
+    border-color: #329947;
+}
+
+.news:active .checkmark {
+    border-width: 3px;
+}
+
+.news:focus .checkmark {
+    outline: 3px solid black;
+    outline-offset: 2px;
+}
+
+.news {
+    outline: none;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 400;
+}
+
+.news input:checked ~ .checkmark {
+    background-color: #329947;
+    border: none;
+}
+
+.checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.news input:checked ~ .checkmark::after {
+    display: block;
+}
+
+.news .checkmark::after {
+    left: 6px;
+    top: 2px;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.send__news {
+    padding-bottom: 24px;
+}
+
+.terms {
+    font-size: 12px;
+    text-align: center;
+    line-height: 16px;
+    letter-spacing: 0.25px;
+}
+
+.terms a {
+    color: #3db756;
+}
+
+.terms a:hover {
+    color: #46d563;
+}
+
+.terms p {
+    padding-bottom: 12px;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.signup__button {
+    display: inline-block;
+    background-color: #1ed760;
+    padding: 16px 48px;
+    border-radius: 500px;
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-transform: none;
+    align-items: center;
+}
+
+.signup__button:hover {
+    transform: scale(1.04);
+    background-color: #1fdf64;
+}
+
+.signup__button:active {
+    /* transform: scale(1); */
+    background-color: #169c46;
+}
+
+.signup__button:focus {
+    outline: 3px solid black;
+    outline-offset: 3px;
+}
+
+.account__login {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0px
+}
+
+.account__login a {
+    color: #3db756;
+}
+
+.account__login a:hover {
+    color: #46d563;
 }
