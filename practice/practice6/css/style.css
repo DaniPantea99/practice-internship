@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato";
+}
+
+body {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: #e7e7e7;
+    height: 100vh;
+    background-color: #000;
+}
+
+.topright__glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: -70px -134px 825px 334px #33013d;
+    z-index: -1;
+} 
+
+.bottomleft__glow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-shadow: 134px 70px 825px 334px #011e22;
+    z-index: -1;
+}
+
+.card__container {
+    position: relative;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+    height: 320px;
+    padding: 50px 105px 30px 30px;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    border-top: 2px solid #7f8a7a;
+    border-right: 2px solid #28b0cb;
+    border-bottom: 2px solid #819d8f;
+    border-left: 2px solid #bb6734;
+    border-radius: 40px;
+}
+
+.card__border::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: -5px;
+    border-radius: inherit;
+    background: linear-gradient(to right, red, orange);
+}
+
+.left__circle {
+    position: absolute;
+    top: -80px;
+    left: -120px;
+    width: 230px;
+    height: 230px;
+    border-radius: 500px;
+    background-image: linear-gradient(180deg, #990100, #f85d06);
+}
+
+.right__circle {
+    position: absolute;
+    bottom: -80px;
+    right: -120px;
+    width: 230px;
+    height: 230px;
+    border-radius: 500px;
+    background: linear-gradient(to bottom, #013aff 0%,#2989d8 100%,#2989d8 100%,#207cca 100%,#207cca 100%,#7db9e8 100%,#00ceff 100%);
+}
+
+.brand {
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+}
+
+.brand p {
+    font-size: 8px;
+    font-weight: normal;
+    padding-bottom: 5px;
+    color: #717171;
+}
+
+.platinum {
+    font-size: 20px;
+    font-family: "Raleway";
+    text-transform: uppercase;
+}
+
+.card__number {
+    padding-top: 20px;
+    font-weight: 600;
+    word-spacing: 20px;
+    font-size: 24px;
+}
+
+.owner__name {
+    display: flex;
+    padding-top: 14px;
+    font-size: 16px;
+    gap: 100px;
+    color: #cccccc;
+}
