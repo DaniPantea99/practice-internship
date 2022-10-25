@@ -3,7 +3,6 @@ export class UserCardList extends HTMLElement {
     
     constructor() {
       super();
-      
       this.attachShadow({mode: 'open'});
     }
     
@@ -11,8 +10,6 @@ export class UserCardList extends HTMLElement {
       this.#usersCards = value;
       this.display();
     }
-
-
 
     get template() {
       return `
