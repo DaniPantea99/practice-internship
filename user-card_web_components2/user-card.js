@@ -1,52 +1,58 @@
+import { userCardsElement } from './app.js';
+
 export class UserCard extends HTMLElement {
-  picture = "https://randomuser.me/api/portraits/lego/1.jpg";
-  username = "Name not defined";
-  joindate = "unknown";
-  email = "@not-available";
-  bio = "This profile has no bio";
-  repos = "0";
-  followers = "0";
-  following = "0";
-  city = "Not Available";
-  link = "Not Available";
-  socialaccount = "Not Available";
-  homepage = "Not Available";
+    id = null;
+  picture = 'https://randomuser.me/api/portraits/lego/1.jpg';
+  username = 'Name not defined';
+  joindate = 'unknown';
+  email = '@not-available';
+  bio = 'This profile has no bio';
+  repos = '0';
+  followers = '0';
+  following = '0';
+  city = 'Not Available';
+  link = 'Not Available';
+  socialaccount = 'Not Available';
+  homepage = 'Not Available';
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
   }
 
   static get observedAttributes() {
     return [
-      "picture",
-      "username",
-      "joindate",
-      "email",
-      "bio",
-      "repos",
-      "followers",
-      "following",
-      "city",
-      "link",
-      "socialaccount",
-      "homepage",
+        'id',
+      'picture',
+      'username',
+      'joindate',
+      'email',
+      'bio',
+      'repos',
+      'followers',
+      'following',
+      'city',
+      'link',
+      'socialaccount',
+      'homepage',
     ];
   }
 
   connectedCallback() {
     this.render();
+    this.userCardActions();
   }
 
   attributeChangedCallback(property, oldValue, newValue) {
     if (this.isConnected) {
       this[property] = this.isNull(newValue) ? this[property] : newValue;
+    //   console.log(property)
       this.render();
     }
   }
 
   isNull(value) {
-    return value === "undefined" || !value;
+    return value === 'undefined' || !value;
   }
 
   get style() {
@@ -62,12 +68,13 @@ export class UserCard extends HTMLElement {
           color: white;
       }
       .user-card {
+        position: relative;
           display: flex;
           width: 550px;
           min-height: 300px;
           background-color: #1f2a48;
           border-radius: 10px;
-          padding: 30px;
+          padding: 25px;
           margin-block: 10px;
           margin-inline: 10px;
           color: white;
@@ -84,7 +91,7 @@ export class UserCard extends HTMLElement {
       header {
           display: flex;
           justify-content: space-between;
-          margin-block-end: 10px;
+          margin-block: 10px;
       }
       header p {
           font-size: 14px;
@@ -96,21 +103,22 @@ export class UserCard extends HTMLElement {
           grid-template-columns: repeat(3, 1fr);
           background-color: #141c2f;
           border-radius: 5px;
-          padding: 20px;
+          padding: 10px 20px;
           color: white;
           font-weight: bold;
-          margin-block-end: 30px;
+          margin-block-end: 20px;
       }
       .user-social-details div > :first-child {
           font-size: 12px;
           font-weight: normal;
           letter-spacing: 1px;
           color: #D5D5D5;
+          margin-bottom: 2px;
       }
       .card-footer {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          row-gap: 15px;
+          row-gap: 10px;
       }
       .card-footer-details p {
           display: inline-block;
@@ -123,12 +131,57 @@ export class UserCard extends HTMLElement {
           margin-inline-end: 10px;
       }
       .user-email {
-          margin-block-end: 20px;
+          margin-block-end: 15px;
           color: #0079fe;
       }
       .user-bio {
-          margin-block-end: 30px;
+          margin-block-end: 15px;
+          height: 80px;
+          overflow: auto;
+          padding-right: 6px;
       }
+      * {
+      scrollbar-width: thin;
+      scrollbar-color: white grey;
+    }
+    
+    
+    *::-webkit-scrollbar {
+      width: 3px;
+    }
+    
+    *::-webkit-scrollbar-track {
+      background: #222a47;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+      background-color: white;
+      border-radius: 20px;
+      border: 3px solid #3222a47;
+    }
+
+    .menu-nav {
+        position: absolute;
+        display: flex;
+        gap: 20px;
+        right: 0;
+        top: 0;
+        transform: translate(-30px, 10px)
+    }
+
+    .menu-nav span svg {
+        fill: white;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+    }
+    .menu-nav span:first-child svg:hover {
+        fill: #6DE6F8;
+    }
+    .menu-nav span:last-child svg:hover {
+        fill: pink;
+    }
+
   </style>
         `;
   }
@@ -136,6 +189,13 @@ export class UserCard extends HTMLElement {
   get template() {
     return `    
   <div class="user-card">
+    <div class="menu-nav">
+    <span class="edit-user-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"/></svg></span>
+    <span class="delete-user-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M352 128c0 70.7-57.3 128-128 128s-128-57.3-128-128S153.3 0 224 0s128 57.3 128 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM472 200H616c13.3 0 24 10.7 24 24s-10.7 24-24 24H472c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>
+    </span>
+    </div>
       <img src="${this.picture}"/>
       <div class="user-details">
           <header>
@@ -189,6 +249,32 @@ export class UserCard extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `${this.style}${this.template}`;
   }
+
+  userCardActions() {
+    const removeUserBtn = this.shadowRoot.querySelector('.delete-user-btn');
+    const editUserBtn = this.shadowRoot.querySelector('.edit-user-btn');
+
+    removeUserBtn.addEventListener('click', removeUser.bind(this));
+    editUserBtn.addEventListener('click', editUser);
+
+    function removeUser() {
+        removeUserBtn.dispatchEvent(new CustomEvent("remove", {
+            detail: {
+            id: this.id
+        },
+        composed: true
+        }))
+    }
+
+    function editUser() {
+        editUserBtn.dispatchEvent(new CustomEvent("edit", {
+            detail: {
+            id: this.id
+        },
+        composed: true
+        }))
+    }
+  }
 }
 
-customElements.define("user-card", UserCard);
+customElements.define('user-card', UserCard);

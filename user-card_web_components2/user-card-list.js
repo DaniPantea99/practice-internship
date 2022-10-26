@@ -1,20 +1,23 @@
 export class UserCardList extends HTMLElement {
-    #usersCards = [];
-    
-    constructor() {
-      super();
-      this.attachShadow({mode: 'open'});
-    }
-    
-    set users(value) {
-      this.#usersCards = value;
-      this.display();
-    }
+  #usersCards = [];
 
-    get template() {
-      return `
-              ${this.#usersCards.map(user => `
-                <user-card
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+  }
+
+  set users(value) {
+    this.#usersCards = value;
+    this.display();
+  }
+
+  get template() {
+    return `
+              ${this.#usersCards
+                .map(
+                  (user) => `
+                <user-card 
+                id='${user.id}'
                   picture="${user.picture}"
                   username="${user.username}"
                   joindate="${user.joindate}"
@@ -29,13 +32,25 @@ export class UserCardList extends HTMLElement {
                   homepage="${user.homepage}"
                   >
                 </user-card>
-              `).join('')}
-            `
-    }
-
-    display() {
-      this.shadowRoot.innerHTML = this.template   
-    }
+              `
+                )
+                .join('')}
+            `;
   }
-  
-  customElements.define('user-card-list', UserCardList);
+
+  display() {
+    this.shadowRoot.innerHTML = this.template;
+
+    [...this.shadowRoot.querySelectorAll('user-card')].forEach((card) => {
+      card.addEventListener('remove', (evt) => {
+        const { id } = evt.detail;
+        this.users = this.#usersCards.filter((user) => user.id !== id);
+      });
+    });
+
+
+    
+  }
+}
+
+customElements.define('user-card-list', UserCardList);

@@ -30,7 +30,7 @@ export class Modal extends HTMLElement {
                 flex-grow: 1;
                 overflow-y: auto;
                 height: 0;
-                padding: 20px;
+                padding: 0 20px 0px 20px;
             }
         * {
             scrollbar-width: thin;

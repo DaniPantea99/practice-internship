@@ -13,8 +13,30 @@ body {
 	height: 100%;
 }
 
+header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background: linear-gradient(to right,  rgb(62, 118, 87), rgb(129, 235, 170));
+	width: 100%;
+}
 
 .add-user-btn {
+	background: linear-gradient(to left,  rgb(43, 113, 75), rgb(12, 94, 43));
 	margin: 20px;
 	padding: 10px;
+	z-index: 1;
+	border: none;
+	color: rgb(181, 181, 181);
+	border-radius: 10px;
+}
+
+.add-user-btn:active {
+	transform: scale(0.98);
+}
+
+.add-user-btn:hover {
+	cursor: pointer;
+	filter: brightness(110%);
+	color: white;
 }

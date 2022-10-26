@@ -1,6 +1,5 @@
 export class CreateEdit extends HTMLElement {
   #show = false;
-
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -20,12 +19,12 @@ export class CreateEdit extends HTMLElement {
       <style>
       :host {
         display: ${this.#show ? "block" : "none"};
-        position: absolute;
-        top: 50%;
+        position: fixed;
+        top: 100px;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, 0%);
         height: 100%;
-        max-height: 80%;
+        max-height: 650px;
         min-height: 400px;
         width: 100%;
         max-width: 400px;
@@ -39,7 +38,7 @@ export class CreateEdit extends HTMLElement {
 
       input {
           width: 100%;
-          margin-bottom: 6px;
+          margin-bottom: 10px;
           border: none;
           padding: 7px;
           outline: none;
@@ -50,11 +49,25 @@ export class CreateEdit extends HTMLElement {
           color: grey;
       }
 
+      *:required {
+        background-color: pink;
+      }
+
+      *:required::placeholder {
+        color:red;
+      }
+
+      *:required:valid {
+        background-color: lightgreen;
+        color: darkgreen;
+        font-weight: bold;
+      }
+
       label {
-          display: flex;
+          display: block;
           flex-direction: column;
-          gap: 10px;
-          margin-top: 6px;
+          padding-bottom: 7px;
+
       }
 
       textarea {
@@ -66,6 +79,8 @@ export class CreateEdit extends HTMLElement {
           max-width: 350px;
           min-width: 200px;
           min-height: 70px;
+          margin-bottom: 10px;
+
       }
 
       .modal {
@@ -81,7 +96,7 @@ export class CreateEdit extends HTMLElement {
       .modal-header {
           display: flex;
           justify-content: space-between;
-
+          align-items: center;
       }
 
       .close-btn {
@@ -100,7 +115,7 @@ export class CreateEdit extends HTMLElement {
       .form-buttons {
           display: flex;
           gap: 10px;
-          margin-top: 10px;
+
       }
 
       .form-buttons button {
@@ -130,7 +145,19 @@ export class CreateEdit extends HTMLElement {
           background-color: lightgreen;
       }
 
-      
+      .req {
+        color: red;
+      }
+
+    //   button[disabled],
+    //   button[disabled]:hover {
+    //     background-color: black;
+    //     color: white;
+    //     cursor: not-allowed;
+    //   }
+
+
+
   </style>
           `;
   }
@@ -144,39 +171,31 @@ export class CreateEdit extends HTMLElement {
       </div>
 
       <div slot="modal-main">
-          <label for="picture">Add picture url:
+          <label for="picture">Add picture url:</label>
               <input type="text" name="picture" id="picture"
-                  placeholder="https://randomuser.me/api/portraits/lego/1.jpg"></input>
-          </label>
-
-          <label for="username">Name:
-              <input type="text" name="username" id="username" placeholder="New username"></input>
-          </label>
-
-          <label for="email">Email address:
+                  placeholder="https://randomuser.me/api/portraits/lego/1.jpg" value="https://randomuser.me/api/portraits/men/1.jpg"></input>
+          
+          <label for="username">Name:<span class="req">*</span></label>
+              <input type="text" name="username" id="username" placeholder="New username" required></input>
+          
+          <label for="email">Email address:</label>
               <input type="text" name="email" id="email" placeholder="@email"></input>
-          </label>
-
-          <label for="bio">Biography:
+          
+          <label for="bio">Biography:</label>
               <textarea rows="3" cols="30" name="bio" id="bio" placeholder="User biography"></textarea>
-          </label>
-
-          <label for="city">City:
+          
+          <label for="city">City:</label>
               <input type="text" name="city" id="city" placeholder="City name"></input>
-          </label>
-
-
-          <label for="link">HTTP address:
+          
+          <label for="link">HTTP address:</label>
               <input type="text" name="link" id="link" placeholder="URL address"></input>
-          </label>
-
-          <label for="socialaccount">Twitter address:
+          
+          <label for="socialaccount">Twitter address:</label>
               <input type="text" name="socialaccount" id="socialaccount" placeholder="Twitter address"></input>
-          </label>
-
-          <label for="homepage">Homepage address:
+          
+          <label for="homepage">Homepage address:</label>
               <input type="text" name="homepage" id="homepage" placeholder="Homepage address"></input>
-          </label>
+          
       </div>
 
       <div slot="modal-footer" class="form-buttons">
@@ -185,6 +204,12 @@ export class CreateEdit extends HTMLElement {
       </div>
   </modal-form>
           `;
+  }
+
+  idGen() {
+    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+    );
   }
 
   render() {
@@ -202,10 +227,33 @@ export class CreateEdit extends HTMLElement {
     });
 
     addBtn.addEventListener('click', () => {
-        userCardsElement.users.push("{}")
+        let newDate = new Date();
+        let month = newDate.toLocaleString('default', { month: 'short' });
+        let today = `${newDate.getDate()} ${month} ${newDate.getFullYear()}`
+        addBtn.dispatchEvent(new CustomEvent('add', {
+            detail: {
+                user: {
+                    id: `${this.idGen()}`,
+                    picture: this.shadowRoot.querySelector('#picture').value,
+                    username: this.shadowRoot.querySelector('#username').value,
+                    joindate: today,
+                    email: this.shadowRoot.querySelector('#email').value,
+                    bio: this.shadowRoot.querySelector('#bio').value,
+                    repos: '',
+                    followers: '',
+                    following: '',
+                    city: this.shadowRoot.querySelector('#city').value,
+                    link: this.shadowRoot.querySelector('#link').value,
+                    socialaccount: this.shadowRoot.querySelector('#socialaccount').value,
+                    homepage: this.shadowRoot.querySelector('#homepage').value,
+                  }
+            },
+            bubbles: true,
+            composed: true
+        }))
+
+        this.show = false;
     })
-
-
 
   }
 }
