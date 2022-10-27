@@ -1,5 +1,7 @@
 export class CreateEdit extends HTMLElement {
   #show = false;
+  #user = null;
+
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -12,6 +14,11 @@ export class CreateEdit extends HTMLElement {
   set show(value) {
     this.#show = value;
     this.render();
+  }
+
+  set user(value) {
+    this.#user = value;
+    this.initForm();
   }
 
   get style() {
@@ -206,12 +213,6 @@ export class CreateEdit extends HTMLElement {
           `;
   }
 
-  idGen() {
-    return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
-      (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-    );
-  }
-
   render() {
     this.shadowRoot.innerHTML = `${this.style}${this.template}`;
 
@@ -227,34 +228,75 @@ export class CreateEdit extends HTMLElement {
     });
 
     addBtn.addEventListener('click', () => {
-        let newDate = new Date();
-        let month = newDate.toLocaleString('default', { month: 'short' });
-        let today = `${newDate.getDate()} ${month} ${newDate.getFullYear()}`
-        addBtn.dispatchEvent(new CustomEvent('add', {
+      if (this.#user.id) {
+        addBtn.dispatchEvent(
+          new CustomEvent('add', {
             detail: {
-                user: {
-                    id: `${this.idGen()}`,
-                    picture: this.shadowRoot.querySelector('#picture').value,
-                    username: this.shadowRoot.querySelector('#username').value,
-                    joindate: today,
-                    email: this.shadowRoot.querySelector('#email').value,
-                    bio: this.shadowRoot.querySelector('#bio').value,
-                    repos: '',
-                    followers: '',
-                    following: '',
-                    city: this.shadowRoot.querySelector('#city').value,
-                    link: this.shadowRoot.querySelector('#link').value,
-                    socialaccount: this.shadowRoot.querySelector('#socialaccount').value,
-                    homepage: this.shadowRoot.querySelector('#homepage').value,
-                  }
+              user: {
+                id: this.#user.id,
+                picture: this.shadowRoot.querySelector('#picture').value,
+                username: this.shadowRoot.querySelector('#username').value,
+                // joindate: today,
+                email: this.shadowRoot.querySelector('#email').value,
+                bio: this.shadowRoot.querySelector('#bio').value,
+                // repos: '',
+                // followers: '',
+                // following: '',
+                city: this.shadowRoot.querySelector('#city').value,
+                link: this.shadowRoot.querySelector('#link').value,
+                socialaccount:
+                  this.shadowRoot.querySelector('#socialaccount').value,
+                homepage: this.shadowRoot.querySelector('#homepage').value,
+              },
             },
             bubbles: true,
-            composed: true
-        }))
+            composed: true,
+          })
+        );
+      } else {
+        let newDate = new Date();
+        let month = newDate.toLocaleString('default', { month: 'short' });
+        let today = `${newDate.getDate()} ${month} ${newDate.getFullYear()}`;
+        addBtn.dispatchEvent(
+          new CustomEvent('add', {
+            detail: {
+              user: {
+                id: this.#user.id,
+                picture: this.shadowRoot.querySelector('#picture').value,
+                username: this.shadowRoot.querySelector('#username').value,
+                joindate: today,
+                email: this.shadowRoot.querySelector('#email').value,
+                bio: this.shadowRoot.querySelector('#bio').value,
+                repos: '',
+                followers: '',
+                following: '',
+                city: this.shadowRoot.querySelector('#city').value,
+                link: this.shadowRoot.querySelector('#link').value,
+                socialaccount:
+                  this.shadowRoot.querySelector('#socialaccount').value,
+                homepage: this.shadowRoot.querySelector('#homepage').value,
+              },
+            },
+            bubbles: true,
+            composed: true,
+          })
+        );
+      }
+      this.show = false;
+    });
+    
+  }
 
-        this.show = false;
-    })
-
+  initForm() {
+    this.shadowRoot.querySelector('.add-btn').innerText = 'Update';
+    this.shadowRoot.querySelector('#picture').value = this.#user?.picture??'';
+    this.shadowRoot.querySelector('#username').value = this.#user?.username??'';
+    this.shadowRoot.querySelector('#email').value = this.#user?.email??'';
+    this.shadowRoot.querySelector('#bio').value = this.#user?.bio??'';
+    this.shadowRoot.querySelector('#city').value = this.#user?.city??'';
+    this.shadowRoot.querySelector('#link').value = this.#user?.link??'';
+    this.shadowRoot.querySelector('#socialaccount').value = this.#user?.socialaccount??'';
+    this.shadowRoot.querySelector('#homepage').value = this.#user?.homepage??'';
   }
 }
 

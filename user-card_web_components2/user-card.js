@@ -255,13 +255,14 @@ export class UserCard extends HTMLElement {
     const editUserBtn = this.shadowRoot.querySelector('.edit-user-btn');
 
     removeUserBtn.addEventListener('click', removeUser.bind(this));
-    editUserBtn.addEventListener('click', editUser);
+    editUserBtn.addEventListener('click', editUser.bind(this));
 
     function removeUser() {
         removeUserBtn.dispatchEvent(new CustomEvent("remove", {
             detail: {
             id: this.id
         },
+        bubbles: true,
         composed: true
         }))
     }
@@ -269,8 +270,21 @@ export class UserCard extends HTMLElement {
     function editUser() {
         editUserBtn.dispatchEvent(new CustomEvent("edit", {
             detail: {
-            id: this.id
+            id: this.id,
+            picture: this.picture,
+            username: this.username,
+            joindate: this.joindate,
+            email: this.email,
+            bio: this.bio,
+            repos: this.repos,
+            followers: this.followers,
+            following: this.following,
+            city: this.city,
+            link: this.link,
+            socialaccount: this.socialaccount,
+            homepage: this.homepage
         },
+        bubbles: true,
         composed: true
         }))
     }

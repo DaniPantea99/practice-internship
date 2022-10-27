@@ -46,10 +46,12 @@ export class UserCardList extends HTMLElement {
         const { id } = evt.detail;
         this.users = this.#usersCards.filter((user) => user.id !== id);
       });
+
+      
     });
 
 
-    
+
   }
 }
 
